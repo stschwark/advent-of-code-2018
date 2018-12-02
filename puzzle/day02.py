@@ -1,4 +1,5 @@
 from collections import Counter
+import itertools
 
 
 def letters_occur_exactly(box_id, count):
@@ -18,8 +19,7 @@ def common_letters(box_id1, box_id2):
 
 
 def common_letters_of_two_similar_ids(box_ids):
-    for i, box_id in enumerate(box_ids):
-        for j in range(i+1, len(box_ids) - 1):
-            result = common_letters(box_id, box_ids[j])
-            if len(result) == len(box_id) - 1:
-                return result
+    for id1, id2 in itertools.combinations(box_ids, 2):
+        result = common_letters(id1, id2)
+        if len(result) == len(id1) - 1:
+            return result
