@@ -14,7 +14,7 @@ def checksum(box_ids):
 
 
 def common_letters(box_id1, box_id2):
-    return ''.join(c if box_id2[i] == c else '' for i, c in enumerate(box_id1))
+    return ''.join(c1 if c1 == c2 else '' for c1, c2 in zip(box_id1, box_id2))
 
 
 def common_letters_of_two_similar_ids(box_ids):
