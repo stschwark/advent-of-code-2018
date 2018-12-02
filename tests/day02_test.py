@@ -1,4 +1,5 @@
 from puzzle.day02 import *
+import os
 
 
 def test_should_not_count_example1():
@@ -37,7 +38,7 @@ def test_should_count_example6_once():
 
 
 def test_should_solve_part1():
-    ids = open('day02_input.txt').read().splitlines()
+    ids = open(os.path.join(os.path.dirname(__file__), 'day02_input.txt')).read().splitlines()
     assert checksum(ids) == 6474
 
 
@@ -50,7 +51,7 @@ def test_should_find_common_letters_example2():
 
 
 def test_should_solve_part2():
-    ids = open('day02_input.txt').read().splitlines()
+    ids = open(os.path.join(os.path.dirname(__file__), 'day02_input.txt')).read().splitlines()
     assert common_letters_of_two_similar_ids(ids) == 'mxhwoglxgeauywfkztndcvjqr'
 
 
